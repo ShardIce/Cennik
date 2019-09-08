@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cennik"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Печать прейскуранта и ценников" Height="500" Width="800">
     <Grid>
+        <TextBox Name="textBoxName"
+                 HorizontalAlignment="Left" 
+                 Margin="263,430,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="335" 
+                 Height="23"/>
         
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="263,26,0,0" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" 
+                   Height="381" 
+                   Width="506"/>
+        <Button 
+            Content="SAVE" 
+            HorizontalAlignment="Left" 
+            Margin="609,430,0,0" 
+            VerticalAlignment="Top" 
+            Click="Button_Click_Save"
+            Width="75" 
+            Height="23"/>
+        <Button 
+            Content="PRINT" 
+            HorizontalAlignment="Left" 
+            Margin="694,430,0,0" 
+            VerticalAlignment="Top"
+            Click="Button_Click_Print"
+            Width="75" 
+            Height="23"/>
+
+
     </Grid>
 </Window>

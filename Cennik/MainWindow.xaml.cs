@@ -24,5 +24,29 @@ namespace Cennik
         {
             InitializeComponent();
         }
+
+        //Обработчик на кнопке
+        private void Button_Click_Save(object seder, RoutedEventArgs e)
+        {
+            if (textBoxName.Text == string.Empty)
+            {
+                MessageBox.Show("Вы не ввели блюдо!");
+            }
+            else
+            {
+                MessageBox.Show("Вы добавили блюдо:" + textBoxName.Text);
+            }
+        }
+        private void Button_Click_Print(object seder, RoutedEventArgs e)
+        {
+            if (textBoxName.Text == string.Empty)
+            {
+                MessageBox.Show("Вы не ввели блюдо!");
+            }
+            else
+            {
+                MessageBox.Show("Вы добавили блюдо:" + textBoxName.Text);
+            }
+        }
     }
 }
