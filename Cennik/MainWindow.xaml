@@ -3,40 +3,66 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Cennik"
         mc:Ignorable="d"
         Title="Печать прейскуранта и ценников" Height="500" Width="800">
     <Grid>
-        <TextBox Name="textBoxName"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350*" />
+            <ColumnDefinition Width="139" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <!-- Вывод блюда -->
+        <ListBox x:Name="dishesList"
+                 HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="29,27,0,-260" 
+                   Height="318" 
+                   Width="601"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 15 0 0" HorizontalAlignment="Center">
+        <!-- Ввод списка блюд -->
+        <TextBox Name="dishText"
                  HorizontalAlignment="Left" 
-                 Margin="263,430,0,0" 
-                 TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
-                 Width="335" 
-                 Height="23"/>
-        
-        <TextBlock HorizontalAlignment="Left" 
-                   Margin="263,26,0,0" 
-                   TextWrapping="Wrap" 
-                   VerticalAlignment="Top" 
-                   Height="381" 
-                   Width="506"/>
+                 Grid.Row="1"
+                 Grid.ColumnSpan="1"
+                 Margin="24,38,0,0" 
+                 TextWrapping="Wrap" 
+                 Width="514"
+                 FontSize="20"
+                 Height="30"/>
+       
+        <!-- Кнопка ввода в список -->
         <Button 
             Content="SAVE" 
             HorizontalAlignment="Left" 
-            Margin="609,430,0,0" 
+            Margin="0,38,0,0" 
             VerticalAlignment="Top" 
             Click="Button_Click_Save"
             Width="75" 
-            Height="23"/>
+            Height="30" 
+            FontSize="20"
+            FontWeight="Bold"
+            Grid.Row="1"/>
+        </StackPanel>
+        <!-- Кнопка печати списка -->
         <Button 
             Content="PRINT" 
             HorizontalAlignment="Left" 
-            Margin="694,430,0,0" 
+            Margin="10,10,0,0" 
             VerticalAlignment="Top"
             Click="Button_Click_Print"
-            Width="75" 
-            Height="23"/>
+            Width="119" 
+            Height="80"
+            FontSize="30"
+            FontWeight="Bold"
+            RenderTransformOrigin="0.526,0.56" 
+            Grid.Column="1" 
+            Grid.Row="1"/>
 
 
     </Grid>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,33 +21,27 @@ namespace Cennik
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<string> dishes;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            dishes = new ObservableCollection<string> { "iPhone 6S Plus", "Nexus 6P", "Galaxy S7 Edge" };
+            dishesList.ItemsSource = dishes;
         }
 
         //Обработчик на кнопке
         private void Button_Click_Save(object seder, RoutedEventArgs e)
         {
-            if (textBoxName.Text == string.Empty)
-            {
-                MessageBox.Show("Вы не ввели блюдо!");
-            }
-            else
-            {
-                MessageBox.Show("Вы добавили блюдо:" + textBoxName.Text);
-            }
+            string dish = dishText.Text;
+            // добавление нового объекта
+            dishes.Add(dish);
         }
+
         private void Button_Click_Print(object seder, RoutedEventArgs e)
         {
-            if (textBoxName.Text == string.Empty)
-            {
-                MessageBox.Show("Вы не ввели блюдо!");
-            }
-            else
-            {
-                MessageBox.Show("Вы добавили блюдо:" + textBoxName.Text);
-            }
+
         }
     }
 }
